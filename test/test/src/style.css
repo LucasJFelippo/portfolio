@@ -1,56 +1,4 @@
 :root {
-  /* Background Colors */
-  --background-color: 17, 36, 51;
-  --presentation-bg-color: 0, 12, 24;
-
-  /* Text Colors */
-  --text: 19, 106, 128;
-  --text-comment: 56, 72, 106;
-  --text-comment-emphasis: 34, 85, 136;
-  --text-var: 87, 136, 180;
-  --text-symbol: 34, 85, 136;
-  --text-string: 34, 170, 49;
-  --text-functions: 221, 187, 107;
-  --text-brackets: 255, 199, 16;
-
-  /* Set fonts */
-  font-family: ExoS, 'PT Sans', Calibri, Tahoma, sans-serif;
-  color: rgba(var(--text), 1);
-}
-
-body {
-  margin: 0;
-  background-color: rgb(var(--background-color));
-}
-
-.text-color {
-  color: rgb(var(--text));
-}
-.text-comment-color {
-  color: rgb(var(--text-comment));
-}
-.text-var-color {
-  color: rgb(var(--text-var));
-}
-.text-symbol-color {
-  color: rgb(var(--text-symbol));
-}
-.text-string-color {
-  color: rgb(var(--text-string));
-}
-.text-functions-color {
-  color: rgb(var(--text-functions));
-}
-.text-brackets-color {
-  color: rgb(var(--text-brackets));
-}
-
-@font-face {
-  font-family: 'ExoS';
-  src: url('assets/fonts/exo_space.ttf');
-}
-
-/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -128,4 +76,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+}
