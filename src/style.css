@@ -29,6 +29,9 @@ body {
 .text-comment-color {
   color: rgb(var(--text-comment));
 }
+.text-comment-emphasis-color {
+  color: rgb(var(--text-comment-emphasis));
+}
 .text-var-color {
   color: rgb(var(--text-var));
 }

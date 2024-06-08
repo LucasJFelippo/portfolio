@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ipsa autem sit labore enim.</p>
             </div>
             <div class="img">
-                <img src="../assets/images/marketplace_placeholder.webp" alt="placeholder">
+                <img class="test" src="../assets/images/marketplace_placeholder.webp" alt="placeholder">
             </div>
         </div>
         <div class="divider"></div>

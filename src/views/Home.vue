@@ -2,13 +2,13 @@
 import { ref, onMounted } from 'vue';
 import Block from '../components/Block.vue';
 
-import { setWorld } from '../assets/scripts/cube_world/main'
+import { BlockWorld } from '../assets/block_world/scripts/blockWorld'
 
-// const world = ref();
+const world = ref();
 
-// onMounted(() => {
-//     setWorld(world.value)
-// });
+onMounted(() => {
+    const blockWorld = new BlockWorld(world.value);
+});
 
 </script>
 
@@ -19,7 +19,7 @@ import { setWorld } from '../assets/scripts/cube_world/main'
             <div></div>
         </div>
 
-        <div id="world" ref="world"></div>
+        <canvas id="world" ref="world"></canvas>
 
         <div id="text">
             <h1>
@@ -36,9 +36,10 @@ import { setWorld } from '../assets/scripts/cube_world/main'
             <h1>
                 <span clas="text-color">Junior Full-Stack Engineer</span>
             </h1>
-            <p>
-                /* Bringing together the blocks that made your businnes soar since 2020. From Web Development to Artificial Intelligence, it’s the adventure to discover new thing to bring solutions to everyday problems that drives me.
-                */
+            <p class="text-comment-color">
+                /* Bringing together the blocks that made <span class="text-comment-emphasis-color">your</span>
+                businnes soar since 2020. From <span class="text-comment-emphasis-color">Web Development</span> to <span class="text-comment-emphasis-color">Artificial Intelligence</span>, it’s the adventure to discover new thing to bring <span class="text-comment-emphasis-color">solutions</span>
+                to everyday <span class="text-comment-emphasis-color">problems</span> that drives me. */
             </p>
         </div>
     </div>
@@ -54,6 +55,8 @@ import { setWorld } from '../assets/scripts/cube_world/main'
 
     width: 100%;
     height: 95vh;
+
+    background-color: rgb(var(--presentation-bg-color));
 }
 #presentation #background {
     position: absolute;
@@ -77,28 +80,62 @@ import { setWorld } from '../assets/scripts/cube_world/main'
     background-color: rgb(var(--presentation-bg-color));
     /* background-image:linear-gradient(to top, rgba(var(--background-color), 1) 0%, rgba(var(--background-color), 0) 50%, rgba(var(--background-color), 1) 100%); */
 }
+
 #presentation #text {
     position: absolute;
-    top: 50%;
-    left: 10%;
+    top: 45%;
+    left: 5%;
     transform: translate(0, -50%);
 
     width: 50%;
 }
 #presentation #text h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     
     margin: 0;
 }
 #presentation #text p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 
     margin: 0;
 }
 
+@media screen and (max-width: 960px) {
+    #presentation #text h1 {
+        font-size: 2.2rem;
+        
+        margin: 0;
+    }
+    #presentation #text p {
+        font-size: 1.1rem;
+
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #presentation #text {
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 70%;
+    
+        text-align: center;
+    }
+    #presentation #text h1 {
+        font-size: 1.6rem;
+    }
+    #presentation #text p {
+        font-size: 1rem;
+    }
+}
+
+/* Canvas of the cubes */
 #world {
     position: absolute;
     width: 100%;
     height: 100%;
+
+    overflow: hidden;
 }
 </style>
